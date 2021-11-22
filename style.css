@@ -1,0 +1,37 @@
+#home-header {
+    position: absolute;
+    left: 500px;
+    top: 30px;
+    font-family: Canela;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+#home-buttons {
+    position: absolute;
+    left: 1100px;
+    top: 10px;
+}
+
+#home-buttons div{
+    text-align: center;
+    width: 60px;
+    font-family: Canela Text;
+    font-size: 16px;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}
+
+#group-list-container {
+    position: absolute;
+    left: 510px;
+    top: 200px;
+    font-family: Canela Text;
+    font-size: 16px;
+}
+
+#group-list-container div {
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+}
