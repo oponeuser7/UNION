@@ -13,22 +13,23 @@
     <img src="images/setting-button.png" id="setting-button">
     <div class="add-schedule-container">
         <span>Add schedule</span>
-        <div>
+        <div class="add-schedule-box">
             <ul>
                 <li>title<input type="text" id="group-add-title" class="block"></li>
-                <li>memo<input type="text" id="group-add-memo" class="block"></li>
+                <li>memo<textarea id="group-add-memo" class="block" rows="3" cols="16   "></textarea></li>
                 <li><input type="text" id="group-add-day" size="5" class="margin-right">day</li>
-                <li>from <input type="text" id="group-add-day" size="5" class="margin-left margin-right"> to <input type="text" id="group-add-day" size="5" class="margin-left margin-right"></li>
+                <li>from <input type="text" class="group-add-time" size="5" class="margin-left margin-right"> to <input type="text" class="group-add-time" size="5" class="margin-left margin-right"></li>
             </ul>
+            <div id="append-schedule">append</div>
         </div>
     </div>
     <div class="schedule-info-container">
         <span>Schedule info</span>
-        <div></div>
+        <div class="schedule-info-box"></div>
     </div>
     <div id="members-container">
         <span>Member's schedule</span>
-        <div></div>
+        <div id="members-box"></div>
     </div>
     <div id="calender-container">
         <table id="group-calender">

@@ -1,3 +1,11 @@
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul {
+    margin: 5px;
+}
+
 .block {
     display: block;
 }
@@ -19,9 +27,10 @@
     font-size: 16px;
 }
 
-.add-schedule-container div {
+.add-schedule-box {
     border: 2px solid black;
-    width: 250px;
+    font-weight: normal;
+    width: 230px;
     height: 250px;
 }
 
@@ -34,9 +43,10 @@
     font-size: 16px;
 }
 
-.schedule-info-container div {
+.schedule-info-box {
     border: 2px solid black;
-    width: 250px;
+    font-weight: normal;
+    width: 230px;
     height: 250px;
 }
 
@@ -93,9 +103,9 @@
     font-size: 16px;
 }
 
-#members-container div {
+#members-box {
     border: 2px solid black;
-    width: 250px;
+    width: 230px;
     height: 250px;
 }
 
@@ -154,4 +164,15 @@
 #union td {
     width: 135px;
     height: 100px;
+}
+
+#append-schedule {
+    position: relative;
+    left: 30%;
+    text-align: center;
+    width: 90px;
+    font-family: Canela Text;
+    font-size: 25px;
+    border-bottom: 3px solid black;
+    cursor: pointer;
 }
