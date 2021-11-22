@@ -1,3 +1,45 @@
+.block {
+    display: block;
+}
+
+.margin-left {
+    margin-left: 5px;
+}
+
+.margin-right {
+    margin-right: 5px;
+}
+
+.add-schedule-container {
+    position: absolute;
+    left: 10px;
+    top: 70px;
+    font-family: Canela Text;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-schedule-container div {
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+}
+
+.schedule-info-container {
+    position: absolute;
+    left: 10px;
+    top: 360px;
+    font-family: Canela Text;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.schedule-info-container div {
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+}
+
 #home-header {
     position: absolute;
     left: 500px;
@@ -5,6 +47,12 @@
     font-family: Canela;
     font-weight: bold;
     font-size: 80px;
+}
+
+#union-header {
+    font-family: Canela;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 #home-buttons {
@@ -34,4 +82,76 @@
     border: 2px solid black;
     width: 250px;
     height: 250px;
+}
+
+#members-container {
+    position: absolute;
+    left: 10px;
+    top: 650px;
+    font-family: Canela Text;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#members-container div {
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+}
+
+#setting-button {
+    position: absolute;
+    left: 1230px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#calender-container {
+    position: absolute;
+    left: 300px;
+    top: 94px;
+}
+
+#calender-container table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#group-calender th {
+    font-family: Canela;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    height: 50px;
+}
+
+#group-calender td {
+    width: 135px;
+    height: 100px;
+}
+
+#union-container {
+    position: absolute;
+    left: 300px;
+    top: 680px;
+}
+
+#union-container table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#union th {
+    font-family: Canela;
+    font-weight: bold;
+    font-size: 20px;
+    width: 130px;
+    height: 50px;
+}
+
+#union td {
+    width: 135px;
+    height: 100px;
 }
