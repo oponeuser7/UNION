@@ -50,13 +50,25 @@ ul {
     height: 250px;
 }
 
+.calender-container {
+    position: absolute;
+    left: 300px;
+    top: 94px;
+}
+
+.times-container {
+    position: absolute;
+    left: 255px;
+    top: 153px;
+}
+
 #home-header {
     position: absolute;
-    left: 500px;
+    left: 468px;
     top: 30px;
     font-family: Canela;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 100px;
 }
 
 #union-header {
@@ -83,7 +95,7 @@ ul {
 #group-list-container {
     position: absolute;
     left: 510px;
-    top: 200px;
+    top: 300px;
     font-family: Canela Text;
     font-size: 16px;
 }
@@ -92,6 +104,10 @@ ul {
     border: 2px solid black;
     width: 250px;
     height: 250px;
+}
+
+#create-group {
+    cursor: pointer;
 }
 
 #members-container {
@@ -109,6 +125,10 @@ ul {
     height: 250px;
 }
 
+#members-box ul, li {
+    cursor: pointer;
+}
+
 #setting-button {
     position: absolute;
     left: 1230px;
@@ -118,13 +138,7 @@ ul {
     cursor: pointer;
 }
 
-#calender-container {
-    position: absolute;
-    left: 300px;
-    top: 94px;
-}
-
-#calender-container table, th, td {
+#group-calender, #group-calender th, #group-calender td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -148,7 +162,7 @@ ul {
     top: 680px;
 }
 
-#union-container table, th, td {
+#union, #union th, #union td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -175,4 +189,64 @@ ul {
     font-size: 25px;
     border-bottom: 3px solid black;
     cursor: pointer;
+}
+
+#remove-schedule {
+    position: relative;
+    left: 13%;
+    text-align: center;
+    width: 90px;
+    font-family: Canela Text;
+    font-size: 25px;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#modify-schedule {
+    position: relative;
+    left: 6%;
+    text-align: center;
+    width: 90px;
+    font-family: Canela Text;
+    font-size: 25px;
+    border-bottom: 3px solid black;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#user-schedule, #user-schedule th, #user-schedule td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#user-schedule th {
+    font-family: Canela;
+    font-weight: bold;
+    font-size: 20px;
+    width: 135px;
+    height: 50px;
+}
+
+#user-schedule td {
+    width: 135px;
+    height: 70px;
+}
+
+#times-user, #times-user th, #times-user td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+#times-user td {
+    width: 30px;
+    height: 70px;
+}
+
+#times-user td div {
+    position: relative;
+    top: 40%;
+    text-align: end;
+    font-family: Canela;
+    font-size: 13px;
 }
