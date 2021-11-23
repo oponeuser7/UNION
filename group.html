@@ -16,7 +16,7 @@
         <div class="add-schedule-box">
             <ul>
                 <li>title<input type="text" id="group-add-title" class="block"></li>
-                <li>memo<textarea id="group-add-memo" class="block" rows="3" cols="16   "></textarea></li>
+                <li>memo<textarea id="group-add-memo" class="block" rows="3" cols="16"></textarea></li>
                 <li><input type="text" id="group-add-day" size="5" class="margin-right">day</li>
                 <li>from <input type="text" class="group-add-time" size="5" class="margin-left margin-right"> to <input type="text" class="group-add-time" size="5" class="margin-left margin-right"></li>
             </ul>
@@ -25,55 +25,95 @@
     </div>
     <div class="schedule-info-container">
         <span>Schedule info</span>
-        <div class="schedule-info-box"></div>
+        <div class="schedule-info-box">
+            <ul>
+                <li>title<input type="text" id="group-modify-title" class="block"></li>
+                <li>memo<textarea id="group-modify-memo" class="block" rows="3" cols="16"></textarea></li>
+                <li><input type="text" id="group-modify-day" size="5" class="margin-right">day</li>
+                <li>from <input type="text" class="group-modify-time" size="5" class="margin-left margin-right"> to <input type="text" class="group-add-time" size="5" class="margin-left margin-right"></li>
+            </ul>
+            <div id="modify-schedule">modify</div>
+            <div id="remove-schedule">remove</div>
+        </div>
     </div>
     <div id="members-container">
         <span>Member's schedule</span>
-        <div id="members-box"></div>
+        <div id="members-box">
+            <ul>
+                <li>John</li>
+                <li>Ryan</li>
+                <li>Avril</li>
+            </ul>
+        </div>
     </div>
-    <div id="calender-container">
+    <div class="calender-container">
         <table id="group-calender">
-            <tr>
-                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
+            <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+    <div class="union-times-container">
+        <table class="times-user">
+            <tr><td><div>1AM</div></td></tr>
+            <tr><td><div>2AM</div></td></tr>
+            <tr><td><div>3AM</div></td></tr>
+            <tr><td><div>4AM</div></td></tr>
+            <tr><td><div>5AM</div></td></tr>
+            <tr><td><div>6AM</div></td></tr>
+            <tr><td><div>7AM</div></td></tr>
+            <tr><td><div>8AM</div></td></tr>
+            <tr><td><div>9AM</div></td></tr>
+            <tr><td><div>10AM</div></td></tr>
+            <tr><td><div>11AM</div></td></tr>
+            <tr><td><div>11AM</div></td></tr>
+            <tr><td><div>12PM</div></td></tr>
+            <tr><td><div>1PM</div></td></tr>
+            <tr><td><div>2PM</div></td></tr>
+            <tr><td><div>3PM</div></td></tr>
+            <tr><td><div>4PM</div></td></tr>
+            <tr><td><div>5PM</div></td></tr>
+            <tr><td><div>6PM</div></td></tr>
+            <tr><td><div>7PM</div></td></tr>
+            <tr><td><div>8PM</div></td></tr>
+            <tr><td><div>9PM</div></td></tr>
+            <tr><td><div>10PM</div></td></tr>
+            <tr><td><div>11PM</div></td></tr>
+            <tr><td><div>12AM</div></td></tr>
         </table>
     </div>
     <div id="union-container">
         <h1 id="union-header">UNION</h1>
-        <table id="union">
-            <tr>
-                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-            <tr>
-                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
+        <table class="user-schedule">
+            <tr></td><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         </table>
     </div>
 </body>

@@ -62,6 +62,12 @@ ul {
     top: 153px;
 }
 
+.union-times-container {
+    position: absolute;
+    left: 255px;
+    top: 854px;
+}
+
 #home-header {
     position: absolute;
     left: 468px;
@@ -215,12 +221,12 @@ ul {
     display: inline-block;
 }
 
-#user-schedule, #user-schedule th, #user-schedule td {
+.user-schedule, .user-schedule th, .user-schedule td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 
-#user-schedule th {
+.user-schedule th {
     font-family: Canela;
     font-weight: bold;
     font-size: 20px;
@@ -228,22 +234,22 @@ ul {
     height: 50px;
 }
 
-#user-schedule td {
+.user-schedule td {
     width: 135px;
     height: 70px;
 }
 
-#times-user, #times-user th, #times-user td {
+.times-user, .times-user th, .times-user td {
     border: 1px solid white;
     border-collapse: collapse;
 }
 
-#times-user td {
+.times-user td {
     width: 30px;
     height: 70px;
 }
 
-#times-user td div {
+.times-user td div {
     position: relative;
     top: 40%;
     text-align: end;
