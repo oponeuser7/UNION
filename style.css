@@ -146,6 +146,7 @@ ul {
 	border: 2px solid black;
     font-family: Canela Text;
     font-size: 20px;
+    display: none;
 }
 
 #sign-in-button {
