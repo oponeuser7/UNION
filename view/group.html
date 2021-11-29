@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../controller/group.js"></script>
     <title>UNION</title>
 </head>
 <body>
     <img src="../images/setting-button.png" id="setting-button">
+    
     <div class="add-schedule-container"> <!--일정 추가 div-->
-        <span>Add schedule</span>
+        <span id="add-schedule-header">Add schedule</span><span id="members-header">Members</span>
         <div class="add-schedule-box">
             <ul> <!--사용자 입력들-->
                 <li>title<input type="text" id="group-add-title" class="block"></li>
@@ -21,7 +23,15 @@
             </ul>
             <div id="append-schedule">append</div> <!--일정 추가 버튼-->
         </div>
+        <div id="members-box">
+            <ul> <!--dummy data-->
+                <li>John</li>
+                <li>Ryan</li>
+                <li>Avril</li>
+            </ul>
+        </div>
     </div>
+    
     <div class="schedule-info-container"> <!--일정 상세정보 div-->
         <span>Schedule info</span>
         <div class="schedule-info-box">
@@ -33,16 +43,6 @@
             </ul>
             <div id="modify-schedule">modify</div> <!--일정 수정 버튼-->
             <div id="remove-schedule">remove</div> <!--일정 삭제 버튼-->
-        </div>
-    </div>
-    <div id="members-container"> <!--그룹 멤버 목록 div-->
-        <span>Member's schedule</span>
-        <div id="members-box">
-            <ul> <!--dummy data-->
-                <li>John</li>
-                <li>Ryan</li>
-                <li>Avril</li>
-            </ul>
         </div>
     </div>
     <div class="calender-container"> <!--캘린더 div-->

@@ -19,7 +19,7 @@ ul {
 }
 
 .add-schedule-container {
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 70px;
     font-family: Canela Text;
@@ -35,7 +35,7 @@ ul {
 }
 
 .schedule-info-container {
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 360px;
     font-family: Canela Text;
@@ -122,6 +122,10 @@ ul {
     left: 10%;
 }
 
+#add-schedule-header {
+    margin-right: 10px;
+}
+
 #home-header {
     position: absolute;
     left: 468px;
@@ -205,16 +209,18 @@ ul {
 #members-container {
     position: absolute;
     left: 10px;
-    top: 650px;
+    top: 70px;
     font-family: Canela Text;
     font-weight: bold;
     font-size: 16px;
+    
 }
 
 #members-box {
     border: 2px solid black;
     width: 230px;
     height: 250px;
+    display: none;
 }
 
 #members-box ul, li {
