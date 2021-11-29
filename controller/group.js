@@ -16,4 +16,12 @@ $(document).ready(function() {
         $("#members-box").hide();
         $(".add-schedule-box").show();
     })
+
+    $("#setting-button").click(function() {
+        $("#setting-window").toggle();
+    });
+    
+    $("#setting-exit-button").click(function() {
+        $("#setting-window").hide();
+    });
 });
