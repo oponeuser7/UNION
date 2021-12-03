@@ -118,6 +118,14 @@ li {
     left: 10%;
 }
 
+.date {
+  position: relative;
+  left: 5px;
+  top: -33px;
+  font-family: Canela;
+  font-size: 18px;
+}
+
 #add-schedule-header {
     margin-right: 10px;
 }
