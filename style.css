@@ -1,9 +1,5 @@
 li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-ul {
-    margin: 5px;
+	margin-left: -10px;
 }
 
 .block {
@@ -196,15 +192,40 @@ ul {
     font-size: 16px;
 }
 
-#group-list-container div {
+#group-list-box {
     border: 2px solid black;
     width: 250px;
     height: 250px;
 }
 
-#create-group {
-    cursor: pointer;
+#create-group-div {
+  margin-left: 9px;
 }
+
+#create-group {
+  position: absolute;
+  cursor: pointer;
+}
+
+#create-group-input-row {
+  position: absolute;
+  display: None;
+}
+
+#create-group-input {
+  font-family: Canela Text;
+}
+
+#create-group-input-button {
+  position: relative;
+  left: 12px;
+  font-family: Canela Text;
+  font-size: 16px;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  display: inline-block;
+}
+
 
 #members-container {
     position: absolute;
@@ -323,6 +344,7 @@ ul {
     font-family: Canela Text;
     background-color: rgb(255,255,254);
     z-index: 1;
+	display: None;
 }
 
 #setting-page-header {

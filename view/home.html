@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="../controller/home.js"></script>
-    <title>UNION</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="../controller/home.js"></script>
+  <title>UNION</title>
 </head>
 <body>
-    <h1 id="home-header">UNION</h1> <!--로그인 페이지 헤더-->
-    <div id="home-buttons"></div> <!--로그인, 로그아웃 버튼 등이 존재하는 div-->
-	<div id="sign-in-window">
-        <div class="sign-in-row">
-            <div class="prefix">ID</div><input type="text" id="id-input">
-        </div>
-        <div class="sign-in-row">
-            <div class="prefix">PW</div><input type="password" id="password-input">
-        </div>
-        <div class="sign-in-row">
-            <div id="sign-in-button">Sign in</div>
-            <div id="sign-up-button">Sign up</div>
-        </div>
-	</div>
-    <div id="group-list-container"> <!--그룹 목록이 나타나는 div-->
-        <span>Group List</span>
-        <div>
-            <ul id="group-list"></ul>
-            <span id="create-group">+ Create Group...</span> <!--그룹 추가 버튼-->
-        </div>
+  <h1 id="home-header">UNION</h1> <!--로그인 페이지 헤더-->
+  <div id="home-buttons"></div> <!--로그인, 로그아웃 버튼 등이 존재하는 div-->
+  <div id="sign-in-window">
+    <div class="sign-in-row">
+      <div class="prefix">ID</div><input type="text" id="id-input">
     </div>
+    <div class="sign-in-row">
+      <div class="prefix">PW</div><input type="password" id="password-input">
+    </div>
+    <div class="sign-in-row">
+      <div id="sign-in-button">Sign in</div>
+      <div id="sign-up-button">Sign up</div>
+    </div>
+  </div>
+  <div id="group-list-container"> <!--그룹 목록이 나타나는 div-->
+    <span>Group List</span>
+    <div id="group-list-box">
+      <ul id="group-list">
+        <li>saltwalks</li>
+        <li>Namsogong</li>
+      </ul>
+      <div id="create-group-div">
+        <div id="create-group">+ Create Group...</div> <!--그룹 추가 버튼-->
+        <div id="create-group-input-row">
+          <input type="text" id="create-group-input">
+          <div id="create-group-input-button">Create</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
