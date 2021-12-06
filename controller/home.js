@@ -4,12 +4,11 @@ $(document).ready(function() {
     if(data==="success") verified();
     else {
       const signIn = $("<div>Sign in</div>").attr("id", "sign-in"); 
+      signIn.click(function(event) {
+        $("#sign-in-window").toggle();
+      });
       $("#home-buttons").append(signIn);
     }
-  });
-  
-	$("#sign-in").click(function(event) {
-    $("#sign-in-window").toggle();
   });
 
   $("#create-group").click(function(event) {
@@ -42,6 +41,9 @@ function verified() {
     });
     $("#home-buttons").empty();
     const signIn = $("<div>Sign in</div>").attr("id", "sign-in"); 
+    signIn.click(function(event) {
+      $("#sign-in-window").toggle();
+    });
     $("#home-buttons").append(signIn);
   });
   myPage.click(function(event) {
