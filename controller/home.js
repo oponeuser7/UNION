@@ -56,4 +56,10 @@ function verified() {
     window.open("../view/user.html");
   });
   $("#home-buttons").empty().append(signOut, myPage);
+  $.get("../model/getGroup.php", {}, function(data) {
+    const groups = JSON.parse(data).group;
+    for(const index in groups) {
+      $("#group-list").append(`<li>${groups[index]}</li>`);
+    }
+  });
 }
