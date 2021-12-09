@@ -14,8 +14,12 @@ $(document).ready(function() {
   });
 
   $("#create-group").click(function(event) {
-    $(event.target).hide();
-    $("#create-group-input-row").show();
+    $.get("../model/checkSession.php", {}, function(data) {
+      if(data==="success") {
+        $(event.target).hide();
+        $("#create-group-input-row").show();
+      }
+    });
   }); 
   
   $("#create-group-input-button").click(function(event) {
