@@ -1,6 +1,6 @@
 <?php
 session_start();
-$id = $_SESSION["id"];
+$id = isset($_SESSION["id"]) ? $_SESSION["id"] : "";
 $result = new stdClass();
 $result->group = Array();
 $file = fopen("../data/user.json", "r");

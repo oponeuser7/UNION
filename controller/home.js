@@ -19,8 +19,13 @@ $(document).ready(function() {
   }); 
   
   $("#create-group-input-button").click(function(event) {
-    $("#create-group-input-row").hide();
-    $("#create-group").show();
+    const name = $("#create-group-input").val();
+    $("#create-group-input").empty();
+    $.post("../model/createGroup.php", {name:name}, function(data) {
+      fetchGroups();
+      $("#create-group-input-row").hide();
+      $("#create-group").show();
+    });
   });
 
   $("#sign-in-button").click(function(event) {
@@ -42,20 +47,26 @@ function verified() {
   const signOut = $("<div>Sign out</div>").attr("id", "sign-out");
   const myPage = $("<div>My page</div>").attr("id", "my-page");
   signOut.click(function(event) {
-    $.post("../model/signOut.php", {}, function(data) {
-      alert("Signed out successfully");
-    });
     $("#home-buttons").empty();
     const signIn = $("<div>Sign in</div>").attr("id", "sign-in"); 
     signIn.click(function(event) {
       $("#sign-in-window").toggle();
     });
     $("#home-buttons").append(signIn);
+    $.post("../model/signOut.php", {}, function(data) {
+      fetchGroups();
+      alert("Signed out successfully");
+    });
   });
   myPage.click(function(event) {
     window.open("../view/user.html");
   });
   $("#home-buttons").empty().append(signOut, myPage);
+  fetchGroups();
+  }
+
+function fetchGroups() {
+  $("#group-list").empty();
   $.get("../model/getGroup.php", {}, function(data) {
     const groups = JSON.parse(data).group;
     for(const index in groups) {
@@ -63,3 +74,4 @@ function verified() {
     }
   });
 }
+
