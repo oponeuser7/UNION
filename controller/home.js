@@ -24,12 +24,14 @@ $(document).ready(function() {
   
   $("#create-group-input-button").click(function(event) {
     const name = $("#create-group-input").val();
-    $("#create-group-input").empty();
-    $.post("../model/createGroup.php", {name:name}, function(data) {
-      fetchGroups();
-      $("#create-group-input-row").hide();
-      $("#create-group").show();
-    });
+    $("#create-group-input").val("");
+    if(name) {
+      $.post("../model/createGroup.php", {name:name}, function(data) {
+        fetchGroups();
+      });
+    }
+    $("#create-group-input-row").hide();
+    $("#create-group").show();
   });
 
   $("#sign-in-button").click(function(event) {
