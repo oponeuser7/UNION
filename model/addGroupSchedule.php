@@ -1,5 +1,6 @@
 <?php
 $schedule = new stdClass();
+$schedule->_id = $_POST["day"]."_".$_POST["from"]."_".$_POST["to"];
 $schedule->group = $_POST["group"];
 $schedule->title = $_POST["title"];
 $schedule->memo = $_POST["memo"];
