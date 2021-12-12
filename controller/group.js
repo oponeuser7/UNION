@@ -1,3 +1,5 @@
+let schedules;
+
 $(document).ready(function() {
 
   getGroupName();  
@@ -65,12 +67,31 @@ function getGroupName() {
       sessionStorage.setItem("group", name);
     }
   }
-  console.log(sessionStorage.getItem("group"));
 }
 
 function initCalender() {
-  $("#group-calender td").each(function(index) {
-    $(this).append($("<div>"+(index+1)+"</div>").addClass("date"));
-    if(index===30) return false;
+  const group = sessionStorage.getItem("group");
+  $.get("../model/fetchGroupSchedule.php", { group: group}, function(data) {
+    schedules = JSON.parse(data); 
+    $("#group-calender td").each(function(index) {
+      const dateArea = $("<div></div>");
+      const ul = $("<ul></ul>").addClass("group-schedule");
+      schedules.forEach(function(value) {
+        if(value.day==index+1) {
+          const schedule = $(`<li>${value.title}</li>`);
+          schedule.attr("id", value._id);
+          ul.append(schedule);
+        }
+      });
+      dateArea.css("position", "absolute");
+      dateArea.css("left", (index%7)*137.7);
+      dateArea.css("top", parseInt(index/7)*103+53);
+      dateArea.css("width", 137.7);
+      dateArea.css("height", 103);
+      dateArea.append($("<div>"+(index+1)+"</div>").addClass("date"));
+      dateArea.append(ul);
+      $(this).append(dateArea);
+      if(index===30) return false;
+    });
   });
 }

@@ -118,12 +118,27 @@ li {
     left: 10%;
 }
 
+.dateArea {
+  width: 135;
+  height: 100;
+}
+
 .date {
-  position: relative;
+  position: absolute;
   left: 5px;
-  top: -33px;
+  top: 5px;
   font-family: Canela;
   font-size: 18px;
+}
+
+.group-schedule {
+  position: absolute;
+  left: 25px;
+  top: 8px;
+  width: 70px;
+  margin: 0px;
+  font-family: Canela;
+  font-size: 14px;
 }
 
 #add-schedule-header {
