@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   getGroupName();  
+  initCalender();
 
   //dding some css to buttons
   $("#members-header").css("color", "gray").css("cursor", "pointer");
@@ -28,6 +29,32 @@ $(document).ready(function() {
     $("#setting-window").hide();
   });
 
+  $("#append-schedule").click(function(event) {
+    const group = sessionStorage.getItem("group");
+    const title = $("#group-add-title").val();
+    const memo = $("#group-add-memo").val();
+    const day = $("#group-add-day").val();
+    const from = $("#group-add-from").val();
+    const to = $("#group-add-to").val();
+    $.post("../model/addGroupSchedule.php", 
+      {
+        group: group,
+        title: title,
+        memo: memo,
+        day: day,
+        from: from,
+        to: to
+      },
+      function(data) {
+        if(data=="success") {
+          alert("schedule is added");
+        }
+        else {
+          alert("somethin gone wrong");
+        }
+      }
+    );
+  });
 });
 
 function getGroupName() {
