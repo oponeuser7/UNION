@@ -1,4 +1,14 @@
 $(document).ready(function() {
+  //configure current group name
+  if(!sessionStorage.getItem("group")) { 
+    const name = localStorage.getItem("group");
+    if(name) {
+      sessionStorage.setItem("group", name);
+    }
+  }
+  console.log(sessionStorage.getItem("group"));
+
+  //visualize date in calender and adding some css
   $("#members-header").css("color", "gray").css("cursor", "pointer");
   $("#add-schedule-header").css("cursor", "pointer");
   $("#group-calender td").each(function(index) {
