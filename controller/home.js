@@ -61,6 +61,7 @@ function verified() {
     $("#home-buttons").append(signIn);
     $.post("../model/signOut.php", {}, function(data) {
       fetchGroups();
+      localStorage.removeItem("group");
       alert("Signed out successfully");
     });
   });
