@@ -1,20 +1,10 @@
 $(document).ready(function() {
-  //configure current group name
-  if(!sessionStorage.getItem("group")) { 
-    const name = localStorage.getItem("group");
-    if(name) {
-      sessionStorage.setItem("group", name);
-    }
-  }
-  console.log(sessionStorage.getItem("group"));
 
-  //visualize date in calender and adding some css
+  getGroupName();  
+
+  //dding some css to buttons
   $("#members-header").css("color", "gray").css("cursor", "pointer");
   $("#add-schedule-header").css("cursor", "pointer");
-  $("#group-calender td").each(function(index) {
-    $(this).append($("<div>"+(index+1)+"</div>").addClass("date"));
-    if(index===30) return false;
-  });
 
   $("#members-header").click(function(){
     $("#add-schedule-header").css("color", "gray");
@@ -39,3 +29,21 @@ $(document).ready(function() {
   });
 
 });
+
+function getGroupName() {
+  //configure current group name
+  if(!sessionStorage.getItem("group")) { 
+    const name = localStorage.getItem("group");
+    if(name) {
+      sessionStorage.setItem("group", name);
+    }
+  }
+  console.log(sessionStorage.getItem("group"));
+}
+
+function initCalender() {
+  $("#group-calender td").each(function(index) {
+    $(this).append($("<div>"+(index+1)+"</div>").addClass("date"));
+    if(index===30) return false;
+  });
+}
