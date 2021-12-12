@@ -76,7 +76,13 @@ function fetchGroups() {
   $.get("../model/getGroup.php", {}, function(data) {
     const groups = JSON.parse(data).group;
     for(const index in groups) {
-      $("#group-list").append(`<li>${groups[index]}</li>`);
+      const row = $(`<li>${groups[index]}</li>`);
+      row.click(function(event) {
+        const name = $(this).text();
+        localStorage.setItem("group", name);
+        window.open("group.html");
+      });
+      $("#group-list").append(row);
     }
   });
 }
