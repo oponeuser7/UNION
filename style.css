@@ -141,6 +141,13 @@ li {
   font-size: 14px;
 }
 
+#group-name {
+  position: fixed;
+  font-size: 35px;
+  font-family: Canela;
+  font-weight: bold;
+}
+
 #add-schedule-header {
     margin-right: 10px;
 }

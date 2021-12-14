@@ -89,6 +89,21 @@ $(document).ready(function() {
       }
     );
   });
+
+  $("#remove-schedule").click(function(event) {
+    const _id = selectedId;
+    $.post("../model/removeGroupSchedule.php", {_id: _id}, function(data) {
+        if(data=="success") {
+          alert("schedule is removed");
+          renderCalender();
+        }
+        else {
+          alert("somethin gone wrong");
+        }
+      }
+    );
+  });
+
 });
 
 
@@ -105,6 +120,7 @@ function getGroupName() {
 
 function renderCalender() {
   const group = sessionStorage.getItem("group");
+  $("#group-name").text(group);
   $.get("../model/fetchGroupSchedule.php", { group: group}, function(data) {
     schedules = JSON.parse(data); 
     $("#group-calender td").each(function(index) {
