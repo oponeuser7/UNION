@@ -3,7 +3,7 @@ let schedules;
 $(document).ready(function() {
 
   getGroupName();  
-  initCalender();
+  renderCalender();
 
   //dding some css to buttons
   $("#members-header").css("color", "gray").css("cursor", "pointer");
@@ -50,6 +50,7 @@ $(document).ready(function() {
       function(data) {
         if(data=="success") {
           alert("schedule is added");
+          renderCalender();
         }
         else {
           alert("somethin gone wrong");
@@ -69,7 +70,7 @@ function getGroupName() {
   }
 }
 
-function initCalender() {
+function renderCalender() {
   const group = sessionStorage.getItem("group");
   $.get("../model/fetchGroupSchedule.php", { group: group}, function(data) {
     schedules = JSON.parse(data); 
