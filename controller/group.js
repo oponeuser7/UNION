@@ -1,4 +1,5 @@
 let schedules;
+let selectedSchedule;
 
 $(document).ready(function() {
 
@@ -81,6 +82,19 @@ function renderCalender() {
         if(value.day==index+1) {
           const schedule = $(`<li>${value.title}</li>`);
           schedule.attr("id", value._id);
+          schedule.click(function(event) {  
+            const temp = $(this).attr("id");
+            schedules.forEach(function(value) {
+              if(value._id===temp) {
+                $("#group-modify-title").val(value.title);
+                $("#group-modify-memo").val(value.memo);
+                $("#group-modify-day").val(value.day);
+                $("#group-modify-from").val(value.from);
+                $("#group-modify-to").val(value.to);
+                selectedSchedule = value._id;
+              }
+            });
+          });
           ul.append(schedule);
         }
       });
