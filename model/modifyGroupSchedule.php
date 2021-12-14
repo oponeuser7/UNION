@@ -17,7 +17,6 @@ while(!feof($file)) {
 	$content[] = json_encode($temp);
 }
 fclose($file);
-$content[] = json_encode($schedule);
 $file = fopen("../data/groupSchedule.json", "w");
 fwrite($file, implode("\n", $content));
 echo "success";

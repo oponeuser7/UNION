@@ -1,5 +1,5 @@
 let schedules;
-let selectedSchedule;
+let selectedId;
 
 $(document).ready(function() {
 
@@ -59,7 +59,39 @@ $(document).ready(function() {
       }
     );
   });
+
+  $("#modify-schedule").click(function(event) {
+    const _id = selectedId;
+    const group = sessionStorage.getItem("group");
+    const title = $("#group-modify-title").val();
+    const memo = $("#group-modify-memo").val();
+    const day = $("#group-modify-day").val();
+    const from = $("#group-modify-from").val();
+    const to = $("#group-modify-to").val();
+    $.post("../model/modifyGroupSchedule.php", 
+      {
+        _id: _id,
+        group: group,
+        title: title,
+        memo: memo,
+        day: day,
+        from: from,
+        to: to
+      },
+      function(data) {
+        if(data=="success") {
+          alert("schedule is modified");
+          renderCalender();
+        }
+        else {
+          alert("somethin gone wrong");
+        }
+      }
+    );
+  });
 });
+
+
 
 function getGroupName() {
   //configure current group name
@@ -76,6 +108,7 @@ function renderCalender() {
   $.get("../model/fetchGroupSchedule.php", { group: group}, function(data) {
     schedules = JSON.parse(data); 
     $("#group-calender td").each(function(index) {
+      $(this).empty();
       const dateArea = $("<div></div>");
       const ul = $("<ul></ul>").addClass("group-schedule");
       schedules.forEach(function(value) {
@@ -91,7 +124,7 @@ function renderCalender() {
                 $("#group-modify-day").val(value.day);
                 $("#group-modify-from").val(value.from);
                 $("#group-modify-to").val(value.to);
-                selectedSchedule = value._id;
+                selectedId = value._id;
               }
             });
           });
