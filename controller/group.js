@@ -112,7 +112,6 @@ $(document).ready(function() {
       results.empty();
       data = JSON.parse(data);
       data.forEach(function(value) {
-        console.log(value);
         const li = $("<li></li>");
         const row = $(`<div>${value.id}</div>`).addClass("result-row");
         const button = $("<div>Invite</div>").addClass("invite-button");

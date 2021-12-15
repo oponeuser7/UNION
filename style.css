@@ -151,6 +151,19 @@ li {
   color: white;
 }
 
+.invite-button {
+  display: inline-block;
+  position: relative;
+  left: 500px;
+  border-bottom: 3px solid black;
+}
+
+#user-search-result {
+  width: 750px;
+  height: 300px;
+  overflow: auto;
+}
+
 #user-name {
   position: fixed;
   font-size: 35px;
@@ -243,6 +256,7 @@ li {
     border: 2px solid black;
     width: 250px;
     height: 250px;
+    overflow: auto;
 }
 
 #create-group-div {
@@ -438,7 +452,7 @@ li {
     font-weight: bold;
 }
 
-#delete-leave-button {
+.delete-leave-button {
     position: absolute;
     left: 34%;
     top: 80%;
