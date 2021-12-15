@@ -38,7 +38,7 @@ $(document).ready(function() {
 
   $("#modify-schedule").click(function(event) {
     const _id = selectedId;
-    const user = sessionStorage.getItem("user");
+    const user = localStorage.getItem("user");
     const title = $("#user-modify-title").val();
     const memo = $("#user-modify-memo").val();
     const day = $("#user-modify-day").val();
