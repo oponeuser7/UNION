@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   getGroupName();  
   renderCalender();
+  union();
 
   //dding some css to buttons
   $("#members-header").css("color", "gray").css("cursor", "pointer");
@@ -136,7 +137,7 @@ $(document).ready(function() {
 
   $("#delete-group-button").click(function() {
     const name = sessionStorage.getItem("group");
-    $.post("../data/deleteGroup.php", {name: name}, function(event) {
+    $.post("../model/deleteGroup.php", {name: name}, function(event) {
       if(data=="success") {
         alert("Group deleted");
       }
@@ -148,7 +149,7 @@ $(document).ready(function() {
 
   $("#leave-group-button").click(function() {
     const id = localStorage.getItem("id");
-    $.post("../data/leaveGroup.php", {id: id}, function(event) {
+    $.post("../model/leaveGroup.php", {id: id}, function(event) {
       if(data=="success") {
         alert("leaving group");
       }
@@ -211,3 +212,25 @@ function renderCalender() {
     });
   });
 }
+
+function union() {
+  const group = sessionStorage.getItem("group");
+  $.get("../model/union.php", {group: group}, function(data) {
+    if(data) {
+      console.log(data);
+      const result = JSON.parse(data);
+      $("#union-calender td").each(function(index) {
+        if(result[index]==true) {
+          $(this).css("background-color", "#228B22");
+        }
+        else {
+          $(this).css("background-color", "#CACACA");
+        }
+      });
+    }
+    else {
+      console.log("something gone wrong");
+    }
+  });
+};
+
