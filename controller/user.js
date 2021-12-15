@@ -9,15 +9,15 @@ $(document).ready(function() {
   renderCalender();
 
   $("#append-schedule").click(function(event) {
-    const user = sessionStorage.getItem("user");
-    const title = $("#group-add-title").val();
-    const memo = $("#group-add-memo").val();
-    const day = $("#group-add-day").val();
-    const from = $("#group-add-from").val();
-    const to = $("#group-add-to").val();
+    const user = localStorage.getItem("user");
+    const title = $("#user-add-title").val();
+    const memo = $("#user-add-memo").val();
+    const day = $("#user-add-day").val();
+    const from = $("#user-add-from").val();
+    const to = $("#user-add-to").val();
     $.post("../model/addUserSchedule.php", 
       {
-        group: group,
+        user: user,
         title: title,
         memo: memo,
         day: day,
@@ -39,15 +39,15 @@ $(document).ready(function() {
   $("#modify-schedule").click(function(event) {
     const _id = selectedId;
     const user = sessionStorage.getItem("user");
-    const title = $("#group-modify-title").val();
-    const memo = $("#group-modify-memo").val();
-    const day = $("#group-modify-day").val();
-    const from = $("#group-modify-from").val();
-    const to = $("#group-modify-to").val();
+    const title = $("#user-modify-title").val();
+    const memo = $("#user-modify-memo").val();
+    const day = $("#user-modify-day").val();
+    const from = $("#user-modify-from").val();
+    const to = $("#user-modify-to").val();
     $.post("../model/modifyUserSchedule.php", 
       {
         _id: _id,
-        group: group,
+        user: user,
         title: title,
         memo: memo,
         day: day,
