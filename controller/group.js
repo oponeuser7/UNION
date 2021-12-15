@@ -1,5 +1,6 @@
 let schedules;
 let selectedId;
+let selectedUser;
 
 $(document).ready(function() {
 
@@ -104,9 +105,38 @@ $(document).ready(function() {
     );
   });
 
+  $("#user-search-button").click(function(event) {
+    const id = $("#user-invite-input").val();
+    $.get("../model/searchUser.php", {id: id}, function(data) {
+      const results = $("#user-search-result-table");
+      results.empty();
+      data = JSON.parse(data);
+      data.forEach(function(value) {
+        console.log(value);
+        const li = $("<li></li>");
+        const row = $(`<div>${value.id}</div>`).addClass("result-row");
+        const button = $("<div>Invite</div>").addClass("invite-button");
+        button.click(function(event) {
+          let user = $(this).parent().text();
+          user = user.substr(0, user.length-6);
+          const group = sessionStorage.getItem("group")
+          $.post("../model/inviteUser.php", {user: user, group: group}, 
+          function(data) {
+            if(data=="success") {
+              renderCalender();
+              alert("User has been invited to this group");
+            }
+            else {
+              alert("User already belongs to this group");
+            }
+          });
+        });
+        results.append(li.append(row.append(button))); 
+      });
+    });
+  });
+
 });
-
-
 
 function getGroupName() {
   //configure current group name
