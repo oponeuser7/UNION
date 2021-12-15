@@ -91,7 +91,7 @@ function renderCalender() {
       const cur = $(this);
       cur.empty();
       schedules.forEach(function(value) {
-        if(3===index%7 && value.from==parseInt(index/7)) {
+        if(dayTable[value.day]===index%7 && value.from==parseInt(index/7)) {
           const duration = parseInt(value.to)-parseInt(value.from);
           const schedule = $(`<div></div>`);
           const innerText = $(`<div>${value.title}</div>`);
