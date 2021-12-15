@@ -13,3 +13,4 @@ while(!feof($file)) {
 }
 fclose($file);
 echo json_encode($result);
+?>
