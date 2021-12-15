@@ -1,45 +1,21 @@
 let schedules;
 let selectedId;
 const dayTable = {
-  "Sun": 0,
-  "Mon": 1,
-  "Tue": 2,
-  "Wed": 3,
-  "Thu": 4,
-  "Fri": 5,
-  "Sat": 6
-}
+  "Sun": 0, "Mon": 1, "Tue": 2, "Wed": 3, "Thu": 4, "Fri": 5, "Sat": 6
+};
 
 $(document).ready(function() {
 
   renderCalender();
 
-  //adding some css to buttons
-  $("#members-header").css("color", "gray").css("cursor", "pointer");
-  $("#add-schedule-header").css("cursor", "pointer");
-
-  $("#members-header").click(function(){
-    $("#add-schedule-header").css("color", "gray");
-    $("#members-header").css("color", "black");
-    $(".add-schedule-box").hide();
-    $("#members-box").show();
-  });
-  
-  $("#add-schedule-header").click(function() {
-    $("#members-header").css("color", "gray");
-    $("#add-schedule-header").css("color", "black");
-    $("#members-box").hide();
-    $(".add-schedule-box").show();
-  })
-  
   $("#append-schedule").click(function(event) {
-    const group = sessionStorage.getItem("group");
+    const user = sessionStorage.getItem("user");
     const title = $("#group-add-title").val();
     const memo = $("#group-add-memo").val();
     const day = $("#group-add-day").val();
     const from = $("#group-add-from").val();
     const to = $("#group-add-to").val();
-    $.post("../model/addGroupSchedule.php", 
+    $.post("../model/addUserSchedule.php", 
       {
         group: group,
         title: title,
@@ -62,13 +38,13 @@ $(document).ready(function() {
 
   $("#modify-schedule").click(function(event) {
     const _id = selectedId;
-    const group = sessionStorage.getItem("group");
+    const user = sessionStorage.getItem("user");
     const title = $("#group-modify-title").val();
     const memo = $("#group-modify-memo").val();
     const day = $("#group-modify-day").val();
     const from = $("#group-modify-from").val();
     const to = $("#group-modify-to").val();
-    $.post("../model/modifyGroupSchedule.php", 
+    $.post("../model/modifyUserSchedule.php", 
       {
         _id: _id,
         group: group,
@@ -92,7 +68,7 @@ $(document).ready(function() {
 
   $("#remove-schedule").click(function(event) {
     const _id = selectedId;
-    $.post("../model/removeGroupSchedule.php", {_id: _id}, function(data) {
+    $.post("../model/removeUserSchedule.php", {_id: _id}, function(data) {
         if(data=="success") {
           alert("schedule is removed");
           renderCalender();
@@ -111,19 +87,25 @@ function renderCalender() {
   $("#user-name").text(user);
   $.get("../model/fetchUserSchedule.php", {user: user}, function(data) {
     schedules = JSON.parse(data); 
-    $("#user-schedule td").each(function(index) {
-      $(this).empty();
+    $("#user-calender td").each(function(index) {
+      const cur = $(this);
+      cur.empty();
       schedules.forEach(function(value) {
-        if(dayTable[value.day]===index%7&&value.from==parseInt(index/7)) {
-          const duration = parseInt(value.to)-parseInt(value.from)
-          const schedule = $(`<div>${value.title}</div>`);
+        if(3===index%7 && value.from==parseInt(index/7)) {
+          const duration = parseInt(value.to)-parseInt(value.from);
+          const schedule = $(`<div></div>`);
+          const innerText = $(`<div>${value.title}</div>`);
+          innerText.addClass("inner-text");
+          schedule.append(innerText);
           schedule.attr("id", value._id);
-          shedule.css("position", "absolute");
-          shedule.css("left", (index%7)*138);
-          shedule.css("top", parseInt(index/7)*73+53);
-          shedule.css("width", 138);
-          shedule.css("height", 103*duration);
-          schedule.css("background-color", "green");
+          schedule.css("position", "absolute");
+          schedule.css("left", (index%7)*138);
+          schedule.css("top", parseInt(index/7)*73+53);
+          schedule.css("width", 137);
+          schedule.css("height", 72.5*duration);
+          schedule.css("background-color", "#12858A");
+          schedule.css("border", "1px solid black");
+          schedule.css("cursor", "pointer");
           schedule.click(function(event) {  
             const temp = $(this).attr("id");
             schedules.forEach(function(value) {
@@ -137,7 +119,7 @@ function renderCalender() {
               }
             });
           });
-          $(this).append(schedule);
+          cur.append(schedule);
         }
       });
     });

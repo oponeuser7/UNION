@@ -141,6 +141,23 @@ li {
   font-size: 14px;
 }
 
+.inner-text {
+  position: relative;
+  display: block;
+  top: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Canela Text;
+  color: white;
+}
+
+#user-name {
+  position: fixed;
+  font-size: 35px;
+  font-family: Canela;
+  font-weight: bold;
+}
+
 #group-name {
   position: fixed;
   font-size: 35px;
