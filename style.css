@@ -231,17 +231,22 @@ li {
 
 #home-buttons {
     position: absolute;
-    left: 1100px;
+    left: 1000px;
     top: 10px;
+    width: 250px;
+    text-align: right;
 }
 
 #home-buttons div{
     text-align: center;
-    width: 70px;
+    width: 80px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-family: Canela Text;
     font-size: 20px;
     border-bottom: 2px solid black;
     cursor: pointer;
+    display: inline-block;
 }
 
 #group-list-container {
