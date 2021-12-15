@@ -39,6 +39,7 @@ $(document).ready(function() {
     const pwd = $("#password-input").val();
     $.post("../model/signIn.php", {id:id, pwd:pwd}, function(data) {
       if(data==="success") {
+        localStorage.setItem("user", id);
         verified();
       }
       else {
@@ -62,6 +63,7 @@ function verified() {
     $.post("../model/signOut.php", {}, function(data) {
       fetchGroups();
       localStorage.removeItem("group");
+      localStorage.removeItem("user");
       alert("Signed out successfully");
     });
   });
