@@ -1,6 +1,5 @@
 let schedules;
 let selectedId;
-let selectedUser;
 
 $(document).ready(function() {
 
@@ -132,6 +131,30 @@ $(document).ready(function() {
         });
         results.append(li.append(row.append(button))); 
       });
+    });
+  });
+
+  $("#delete-group-button").click(function() {
+    const name = sessionStorage.getItem("group");
+    $.post("../data/deleteGroup.php", {name: name}, function(event) {
+      if(data=="success") {
+        alert("Group deleted");
+      }
+      else {
+        alert("something gone wrong");
+      }
+    });
+  });
+
+  $("#leave-group-button").click(function() {
+    const id = localStorage.getItem("id");
+    $.post("../data/leaveGroup.php", {id: id}, function(event) {
+      if(data=="success") {
+        alert("leaving group");
+      }
+      else {
+        alert("something gone wrong");
+      }
     });
   });
 
